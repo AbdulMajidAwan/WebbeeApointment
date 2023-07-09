@@ -12,6 +12,8 @@ use App\Models\Slot;
 class AppointmentController extends Controller
 {
     /*
+     * Create Appointment
+     * Rec Body
        INPUT
         Raw data Json formate
          {
