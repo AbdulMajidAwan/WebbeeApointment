@@ -82,7 +82,6 @@ class AppointmentController extends Controller
             }
             return response()->json(['message' => 'Appointment created successfully'], Response::HTTP_CREATED);
         } catch (\Exception $e) {
-            print_r($e->getMessage());die;
             // Handle the exception and return an error response
             return response()->json(['error' => 'An error occurred while creating the appointment'], Response::HTTP_INTERNAL_SERVER_ERROR);
         }
