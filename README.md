@@ -1,4 +1,4 @@
-Step 1 php artisan migrate
+Step 1 php artisan migrate 
 step 2 php artisan db:seed
 Two Api 
 Api end points 
