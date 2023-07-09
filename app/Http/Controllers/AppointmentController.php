@@ -11,27 +11,27 @@ use App\Models\Slot;
 
 class AppointmentController extends Controller
 {
+    /*
+       INPUT
+        Raw data Json formate
+         {
+           "slot_id": 196,
+               "appointment_details": [
+                   {
+                     "email": "john@example.com",
+                     "first_name": "John",
+                     "last_name": "Doe"
+                   },
+                   {
+                       "email": "jane@example.com",
+                     "first_name": "Jane",
+                     "last_name": "Smith"
+                   }
+               ]
+           }
+       */
     public function create(Request $request)
     {
-        /*
-        INPUT
-         Raw data Json formate
-          {
-            "slot_id": 196,
-                "appointment_details": [
-                    {
-                      "email": "john@example.com",
-                      "first_name": "John",
-                      "last_name": "Doe"
-                    },
-                    {
-                        "email": "jane@example.com",
-                      "first_name": "Jane",
-                      "last_name": "Smith"
-                    }
-                ]
-            }
-        */
         try {
             $rules = [
                 'slot_id' => 'required',
@@ -80,6 +80,7 @@ class AppointmentController extends Controller
             }
             return response()->json(['message' => 'Appointment created successfully'], Response::HTTP_CREATED);
         } catch (\Exception $e) {
+            print_r($e->getMessage());die;
             // Handle the exception and return an error response
             return response()->json(['error' => 'An error occurred while creating the appointment'], Response::HTTP_INTERNAL_SERVER_ERROR);
         }

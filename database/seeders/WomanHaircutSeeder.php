@@ -152,7 +152,8 @@ class WomanHaircutSeeder extends Seeder
                             $slot = new Slot();
                             $slot->service_id = $menHaircutService->id;
                             $slot->slot_date = $currentDate->format('Y-m-d');
-                            $slot->slot_time = $startTime->format('H:i:s');
+                            $slot->slot_start_time = $startTime->format('H:i:s');
+                            $slot->slot_end_time =$startTime->copy()->addMinutes($menHaircutService->duration_minutes)->format('H:i:s');
                             $slot->save();
                         }
                         //$startTime->addMinutes(15); // Increase by the cleanup break duration

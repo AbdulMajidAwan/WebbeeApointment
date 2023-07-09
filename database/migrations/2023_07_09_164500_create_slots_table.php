@@ -15,7 +15,7 @@ return new class extends Migration
             $table->increments('id');
             $table->unsignedInteger('service_id');
             $table->date('slot_date');
-            $table->time('slot_time');
+            $table->time('slot_start_time');
             $table->timestamps();
 
             $table->foreign('service_id')->references('id')->on('services')->onDelete('cascade');
