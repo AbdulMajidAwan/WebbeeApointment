@@ -26,11 +26,6 @@ class MenHaircutSeeder extends Seeder
         $booking_limits->max_booking_count =3;
         $booking_limits->save();
 
-        // Insert user information
-        $user = new User();
-        $user->username = 'A.Majid';
-        $user->email = 'majide@example.com';
-        $user->save();
 
         // Save opening hours
         $openingHours = [

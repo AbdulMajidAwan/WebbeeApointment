@@ -10,8 +10,8 @@ class SlotsController extends Controller
 {
     public function getAllSlots()
     {
-        $services = Service::all();
         try {
+            $services = Service::all();
             // Prepare the response data
             $response = [];
             foreach ($services as $service) {
