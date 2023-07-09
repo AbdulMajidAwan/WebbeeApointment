@@ -4,6 +4,7 @@ Two Api
 Api end points 
 
 GET /api/getAllSlots
+
 POST /api/appointments_create
 Send raw JSON {
   "slot_id": 196,
