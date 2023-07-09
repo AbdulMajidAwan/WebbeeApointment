@@ -10,15 +10,11 @@ class Appointment extends Model
     use HasFactory;
     protected $table = 'appointments';
 
-    // Define the relationship with User model
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
+
 
     // Define the relationship with Service model
-    public function service()
+    public function slot()
     {
-        return $this->belongsTo(Service::class);
+        return $this->belongsTo(Slot::class);
     }
 }

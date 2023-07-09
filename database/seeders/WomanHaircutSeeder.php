@@ -1,23 +1,30 @@
 <?php
-namespace Database\Seeders;
-use Illuminate\Database\Seeder;
-use Carbon\Carbon;
-use App\Models\Service;
-use App\Models\OpeningHour;
-use App\Models\Breaks;
-use App\Models\PublicHoliday;
-use App\Models\Slot;
-use App\Models\BookingLimit;
-use App\Models\User;
 
-class MenHaircutSeeder extends Seeder
+namespace Database\Seeders;
+
+use App\Models\Appointment;
+use App\Models\BookingLimit;
+use App\Models\Breaks;
+use App\Models\OpeningHour;
+use App\Models\PublicHoliday;
+use App\Models\Service;
+use App\Models\Slot;
+use App\Models\User;
+use Carbon\Carbon;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\Seeder;
+
+class WomanHaircutSeeder extends Seeder
 {
-    public function run()
+    /**
+     * Run the database seeds.
+     */
+    public function run(): void
     {
         // Create Men Haircut service
         $menHaircutService = new Service();
-        $menHaircutService->service_name = 'Men Haircut';
-        $menHaircutService->duration_minutes = 15; // Duration in minutes
+        $menHaircutService->service_name = 'Women Haircut';
+        $menHaircutService->duration_minutes = 60; //60+10 minute cleanin
         $menHaircutService->save();
 
         // Insert booking_limits
@@ -28,8 +35,8 @@ class MenHaircutSeeder extends Seeder
 
         // Insert user information
         $user = new User();
-        $user->username = 'A.Majid';
-        $user->email = 'majide@example.com';
+        $user->username = 'Ana';
+        $user->email = 'Ana@example.com';
         $user->save();
 
         // Save opening hours

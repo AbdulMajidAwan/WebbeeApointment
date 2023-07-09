@@ -9,4 +9,8 @@ class Service extends Model
 {
     use HasFactory;
     protected $table = 'services';
+    public function slots()
+    {
+        return $this->hasMany(Slot::class);
+    }
 }
